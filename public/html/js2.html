@@ -1,0 +1,48 @@
+<html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $.getJSON(
+        "https://api.punkapi.com/v2/beers",
+        { ajax: true },
+        function (data) {
+          console.log(data);
+          data.forEach((item, index) => {
+            $("#category").append($("<option>").text(item.name).val(item.id));
+          });
+        }
+      );
+
+      // when we select the category the this function is called
+      $("#category").change(function () {
+        $("#subcategory").empty()
+        $("#subcategory").append(
+          $("<option>").text("choose subcategory")
+        )
+        alert($("#category").val());
+        $.getJSON(
+          "https://api.punkapi.com/v2/beers",
+          { ajax: true,ids: $("#category").val(),name:'vishal' }, // https://api.punkapi.com/v2/beers?ids=5&ajax=true
+          function (rslt) {
+            console.log(rslt);
+            rslt.forEach((item, index)=>{
+              $("#subcategory").append(
+                $("<option>").text(item.name).val(item.id)
+              )
+            })
+          }
+        );
+      });
+    });
+  </script>
+
+  <select id="category">
+    <option>-Select category-</option>
+  </select>
+  <br>
+  <br>
+  <select id="subcategory">
+    <option>-Select subcategory-</option>
+  </select>
+  <div id="result"></div>
+</html>

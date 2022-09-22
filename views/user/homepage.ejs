@@ -1,0 +1,117 @@
+<html>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var elems = document.querySelectorAll(".carousel");
+      var instances = M.Carousel.init(elems);
+    });
+    
+    var instance = M.Carousel.init({
+      fullWidth: true,
+      indicators: true,
+    });
+  </script>
+  <body>
+    <nav style="background-color: #2f3640">
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="left">
+          <li>
+            <a href="#"
+              ><img src="/images/syntra.png" style="padding: 5px" width="80"
+            /></a>
+          </li>
+          <% data.forEach((item,index)=>{ %>
+          <li>
+            <a class="category" cid="<%=item.categoryid%>"
+              ><%=item.categoryname%></a
+            >
+          </li>
+          <% }) %>
+          <li>
+            <div
+              class="col s12"
+              style="
+                display: flex;
+                justify-content: center;
+                width: 586px;
+                margin-left: 223px;
+              "
+            >
+              <i class="material-icons prefix" style="margin-right: 10px"
+                >search</i
+              >
+              <input
+                id="icon_prefix"
+                type="text"
+                class="validate"
+                placeholder="Search..."
+              />
+            </div>
+          </li>
+          <li>
+            <a href="#"
+              ><span class="material-icons" style="line-height: 2.5">
+                account_circle
+              </span></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><span class="material-icons" style="line-height: 2.5">
+                favorite_border
+              </span></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><span class="material-icons" style="line-height: 2.5">
+                shopping_bag
+              </span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="subcategory"></div>
+
+    <div class="carousel carousel-slider">
+      <a class="carousel-item" href="#one!"
+        ><img
+          src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/25/b656a7f4-4688-4997-bb7c-54b78793981e1658752386588-Western-Wear_Desk.jpg"
+      /></a>
+      <a class="carousel-item" href="#two!"
+        ><img
+          src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/28/84b6a214-9eb3-49eb-9f9d-72cec56ec5d71659019908592-Indian-Wear_DK--1-.jpg"
+      /></a>
+      <a class="carousel-item" href="#three!"
+        ><img
+          src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/25/9be788ff-39a4-4214-99d0-fc97505aae5a1658752545685-USPA_Desk_Banner.jpg"
+      /></a>
+    </div>
+      <div id="product" style="display: flex; flex-wrap: wrap;"></div>
+  </body>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="/javascripts/homepage-jquery.js"></script>
+</html>

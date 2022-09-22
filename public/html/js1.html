@@ -1,0 +1,52 @@
+<html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // on the basis of id
+      $("#btn").click(function () {
+        alert("hello");
+      });
+
+      // on the basis of class
+      $(".btn1").click(function () {
+        alert("hii");
+      });
+
+      $("#formsubmit").click(function () {
+        var a = $("#fname").val();
+        var b = $("#lname").val();
+        alert(a + " " + b); // to get the value
+        alert(`${a} ${b}`);
+      });
+
+      $("#category").change(function () {
+        alert($("#category").val());
+      });
+
+      $("#txt").keyup(function () {
+        $("#result").html("hello "+$("#txt").val())
+      });
+    });
+  </script>
+  <button id="btn" type="button">Click here(id)</button>
+  <br /><br />
+  <button class="btn1" type="button">Click here(class)</button>
+  <br /><br />
+  <input type="text" placeholder="First Name" id="fname" />
+  <input type="text" placeholder="Last Name" id="lname" />
+  <br />
+  <br />
+  <input type="button" id="formsubmit" value="Submit" />
+  <br />
+  <br />
+  <select id="category">
+    <option>-Select-</option>
+    <option>Men</option>
+    <option>Women</option>
+    <option>Kids</option>
+  </select>
+  <br />
+  <br />
+  <input type="text" id="txt" />
+  <div id="result"></div>
+</html>

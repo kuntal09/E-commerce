@@ -1,0 +1,100 @@
+<html>
+  <!-- Compiled and minified CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <style>
+    .maincontainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      background-color: #2f3640;
+    }
+    .subcontainer {
+      width: 50%;
+      background-color: #dcdde1;
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .heading {
+      font-size: 30px;
+      text-align: center;
+      font-weight: bold;
+      color: #2f3640;
+      display:flex;
+      justify-content:space-between;
+      align-items: center;
+    }
+  </style>
+  <body style="margin: 0px">
+    <div class="maincontainer">
+      <div class="subcontainer">
+        <div class="heading">Category Display <a  href="/category/" target="mw" class="waves-effect waves-teal btn-flat"><i class="material-icons right">add</i>Add Category</a></div>
+        <div class="row">
+          <table class="highlight">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Picture</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% data.forEach((item,index)=>{ %>
+              <tr>
+                <td><%= item.categoryid %></td>
+                <td><%= item.categoryname %></td>
+                <td>
+                  <a
+                    title="Edit"
+                    href="/category/displaypicture?cid=<%= item.categoryid %>"
+                    style="color: black"
+                    >
+                    <img src="/images/<%= item.picture %>" width="100" />
+                  </a>
+                </td>
+                <td>
+                  <a
+                    title="Edit"
+                    href="/category/displaybyid?cid=<%= item.categoryid %>"
+                    style="color: black"
+                    ><span class="material-icons"> edit </span></a
+                  >
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a
+                    title="Delete"
+                    href="/category/delete?cid=<%= item.categoryid %>"
+                    style="color: black"
+                  >
+                    <span class="material-icons"> delete </span>
+                  </a>
+                </td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

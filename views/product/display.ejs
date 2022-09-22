@@ -1,0 +1,105 @@
+<html>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Cnompiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+       
+    </script>
+   
+          
+     
+    <style>
+        .maincontainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #2f3640;
+            height:100vh;
+            width:100vw
+        }
+        .subcontainer{
+            background-color:#dcdde1;
+            border-radius: 10px;
+            width:90%;
+        }
+        .heading{
+            font-weight:bold;
+            color: '#2f3640';
+            font-size: 30px;
+            text-align: center;
+
+            
+        }
+        .msgStyle{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: black;
+        }
+    </style>
+    <div class="maincontainer">
+        <div class="subcontainer">
+          
+            <table class="highlight">
+                <thead>
+                  <tr>
+                      <th>Product Id</th>
+                      <th>Category Id</th>
+                      <th>Subategory Id</th>
+                      <th>Productname</th>
+                      <th>Description</th>
+                      <th>Price</th>
+                      <th>Offerprice</th>
+                      <th>Color</th>
+                      <th>Size</th>
+                      <th>Stock</th>
+                      <th>Picture</th>
+                      <th>Status</th>     
+                      <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+               <% data.forEach((item,index)=>{%>
+              <tr>
+                <td><%=item.productid%></td>
+                <td><%=item.categoryid%></td>
+                <td><%=item.subcategoryid%></td>
+                <td><%=item.productname%></td>
+                <td><%=item.description%></td>
+                <td><%=item.price%></td>
+                <td><%=item.offerprice%></td>
+                <td><%=item.color%></td>
+                <td><%=item.size%></td>
+                <td><%=item.stock%></td>
+                <td><a title="Edit"  style="color:black"  href="/product/displaypicture?pid=<%=item.productid%>"><img src='/images/<%=item.picture%>' width='150px' height='40%'/></a></td>
+                <td><%=item.status%></td>
+                <td><a title="Edit"  style="color:black"  href="/product/displaybyid?pid=<%=item.productid%>"><span class="material-icons">
+                    edit
+                    </span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a title="Delete"  style="color:black"  href="/product/delete?pid=<%=item.productid%>"><span class="material-icons">
+                    delete
+                        </span></a>
+                    </td>
+              </tr>
+              <% })%>
+                </tbody>
+                </table>
+ 
+                                  
+                                 
+               
+                </div>
+                </div>
+                
+           
+    
+  
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+     <!-- Compiled and minified JavaScript -->
+     
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     
+     </html>

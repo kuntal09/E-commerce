@@ -1,0 +1,93 @@
+<html>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Cnompiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+       
+    </script>
+   
+          
+     
+    <style>
+        .maincontainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #2f3640;
+            height:100vh;
+            width:100vw
+        }
+        .subcontainer{
+            background-color:#dcdde1;
+            border-radius: 10px;
+            width:75%;
+        }
+        .heading{
+            font-weight:bold;
+            color: '#2f3640';
+            font-size: 30px;
+            text-align: center;
+
+            
+        }
+        .msgStyle{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: black;
+        }
+    </style>
+    <div class="maincontainer">
+        <div class="subcontainer">
+          <form action="/subcategory/add" method="post" enctype="multipart/form-data">
+            <table class="highlight">
+                <thead>
+                  <tr>
+                      <th>Subcategory Id</th>
+                      <th>Category Id</th>
+                      <th>SubCategory Name</th>
+                      <th>Description</th>
+                      <th>Picture</th>
+                      <th>Status</th>     
+                      <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+               <% data.forEach((item,index)=>{%>
+              <tr>
+                <td><%=item.categoryid%></td>
+                <td><%=item.subcategoryid%></td>
+                <td><%=item.subcategoryname%></td>
+                <td><%=item.description%></td>
+                <td><a title="Edit"  style="color:black"  href="/subcategory/displaypicture?sid=<%=item.subcategoryid%>"><img src='/images/<%=item.picture%>' width='150px' height='40%'/></a></td>
+                <td><%=item.status%></td>
+                <td><a title="Edit"  style="color:black"  href="/subcategory/displaybyid?sid=<%=item.subcategoryid%>"><span class="material-icons">
+                    edit
+                    </span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a title="Edit"  style="color:black"  href="/subcategory/delete?sid=<%=item.subcategoryid%>"><span class="material-icons">
+                    delete
+                        </span></a>
+                    </td>
+              </tr>
+              <% })%>
+                </tbody>
+                </table>
+ 
+                                  </form> 
+                                 
+               
+                </div>
+                </div>
+                
+           
+    
+  
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+     <!-- Compiled and minified JavaScript -->
+     
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     
+     </html>
